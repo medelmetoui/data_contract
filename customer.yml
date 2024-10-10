@@ -1,0 +1,24 @@
+name: Customer
+description: A customer of test.
+owner: arion@ariontech.com
+version: 1
+fields:
+  id:
+    type: string
+    description: The unique identifier for the customer.
+    required: true
+  name:
+    type: string
+    description: The name of the customer.
+    required: true
+    anonymization_strategy: hex
+  email:
+    type: string
+    description: The email address of the customer.
+    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    required: true
+    anonymization_strategy: email
+  language:
+    type: string
+    description: The language preference of the customer.
+    enum: [en, fr, es]
